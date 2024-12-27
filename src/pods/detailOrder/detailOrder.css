@@ -1,0 +1,365 @@
+.detail-detailOrderPage {
+    width: min-content;
+    margin-left: 10px;
+}
+
+.detail-detailOrderPage .title {
+    text-align: start;
+    margin-bottom: 15px;
+}
+
+.detail-orderInputsUp {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.detail-orderInputsDown {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.detail-headerBox {
+    border: 1px solid black;
+    padding: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.detail-inputBoxDate {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.detail-inputBoxDate label {
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.detail-inputBoxDate input {
+    padding: 10px;
+    width: 180px;
+}
+
+.detail-inputBoxDate .detail-invalid-feedback {
+    position: absolute;
+    right: 35px;
+    top: 30px;
+}
+
+.detail-inputBox {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.detail-inputBox label {
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.detail-inputBox input {
+    padding: 10px;
+}
+
+.detail-inputBox .detail-invalid-feedback {
+    position: absolute;
+    right: 10px;
+    top: 30px;
+}
+
+.detail-borderRed {
+    border: 1px solid red;
+    border-radius: 2px;
+}
+
+.detail-borderGreen {
+    border: 1px solid green;
+    border-radius: 2px;
+}
+
+.detail-inputsGroup {
+    display: flex;
+    gap: 30px;
+}
+
+.detail-descriptionBox {
+    position: relative;
+}
+
+.detail-amountBox {
+    position: relative;
+}
+
+.detail-amountBox .detail-invalid-feedback {
+    position: absolute;
+    top: 8px;
+    right: 4px;
+}
+
+.detail-descriptionBox .detail-invalid-feedback {
+    position: absolute;
+    top: 8px;
+    right: 4px;
+}
+
+.detail-totalAmount {
+    position: relative;
+}
+
+.detail-inputIcon {
+    position: absolute;
+    right: 5px;
+    top: 2px;
+    color: gray;
+}
+
+.detail-orderEntriesBox {
+    border: 1px solid black;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.detail-orderStateLabel {
+    display: block;
+    width: 224px;
+}
+
+.detail-orderState input {
+    width: 100px;
+}
+
+.detail-orderState .detail-orderStateIcon {
+    position: absolute;
+    right: 5px;
+    top: 25px;
+    color: gray;
+}
+
+.detail-buttonsGroup {
+    display: flex;
+    gap: 20px;
+}
+
+.detail-updateOrderButton {
+    background-color: #ffbb00;
+    border: none;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    height: min-content;
+    border-radius: 5px;
+}
+
+.detail-updateOrderButton:hover {
+    cursor: pointer;
+    background-color: #ffc21b;
+}
+
+.sendButton {
+    background-color: #9291c5;
+    border: none;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    height: min-content;
+    border-radius: 5px;
+}
+
+.sendActive:hover {
+    cursor: pointer;
+    background-color: #3f3dc4;
+}
+
+.sendActive {
+    background-color: #2d2ab9;
+}
+
+.sendDisabled {
+    background-color: #bfbfcc;
+    color: #6b6b79;
+}
+
+.detail-checkStateContainer {
+    display: flex;
+    gap: 10px;
+}
+
+.detail-checkbox {
+    display: flex;
+}
+
+.detail-orderState .detail-inputItem {
+    width: 176px;
+}
+
+.detail-OrdersListDetail {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-OrdersListDetail .detail-itemsDesc {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.detail-OrdersListDetail .detail-itemsDesc span {
+    flex: 0 0 200px;
+    text-align: left;
+    margin-bottom: 5px;
+    white-space: nowrap;
+}
+
+.detail-OrdersListDetail .detail-itemsDesc span:first-child {
+    flex-basis: 0 0 224px;
+    flex-shrink: 0;
+}
+
+.detail-OrdersListDetail .detail-itemsDesc .detail-emptyBox {
+    width: 30px;
+}
+
+.detail-itemsDataList .detail-itemData {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 20px;
+}
+
+.detail-itemData .detail-amount {
+    width: 200px;
+    padding: 5px;
+}
+
+.detail-deleteItem {
+    width: 30px;
+    height: 30px;
+}
+
+.detail-itemData .detail-inputItem {
+    width: 200px;
+    height: 40px;
+    padding: 10px;
+    border-width: 1px;
+    border-radius: 5px;
+    border-style: solid;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.detail-addFieldBox {
+    display: flex;
+    justify-content: end;
+    margin-top: 50px;
+}
+
+.detail-addFieldBox button[type="button"] {
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.detail-addFieldBox button[type="button"] .detail-addIcon {
+    position: absolute;
+    left: -25px;
+    top: 19;
+}
+
+.detail-addFieldBox button[type="button"]:hover {
+    box-shadow: 0px 2px 2px black;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.detail-addFieldBox button[type="button"]:hover .detail-addIcon {
+    transition: all 0.5s;
+    left: 0;
+}
+
+.errors {
+    margin-top: 50px;
+}
+
+.errors .is-invalid {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(252, 104, 104);
+    margin: 10px 0px 10px 0px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.errors .is-invalid .errorMessage {
+    display: flex;
+    gap: 10px;
+}
+
+@media (max-width: 930px) {
+    .detail-detailOrderPage {
+        width: auto;
+    }
+
+    .detail-orderInputsUp {
+        flex-direction: column;
+    }
+
+    .detail-inputBoxDate input {
+        width: auto;
+    }
+
+    .detail-itemsDesc {
+        margin-left: 55px;
+    }
+
+    .detail-itemsDesc span {}
+
+    .detail-inputsGroup {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .detail-inputsGroup input {
+        width: 100%;
+    }
+
+    .detail-orderInputsDown {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .detail-buttonsGroup {
+        margin-top: 30px;
+    }
+
+    .detail-orderEntries {}
+
+    .detail-orderEntriesBox {
+        position: relative;
+    }
+
+    .detail-addFieldBox {
+        margin-bottom: 30px;
+    }
+
+    .detail-order-wrap {
+        overflow: scroll;
+    }
+
+    .detail-addFieldBox button[type="button"] {
+        position: absolute;
+        right: 20px;
+        bottom: 50px;
+    }
+
+
+}

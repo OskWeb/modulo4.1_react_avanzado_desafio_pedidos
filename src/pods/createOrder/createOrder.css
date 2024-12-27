@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.createOrderPage {
+    width: min-content;
+    margin-left: 10px;
+}
+.createOrderPage .title {
+    text-align: start;
+    margin-bottom: 15px;
+}
+.createOrderPageBox {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    border: 1px solid black;
+}
+.orderInputsUp {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+.orderInputsDown {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.inputBox {
+    display: flex;
+    flex-direction: column;
+}
+.inputBox label {
+    margin-bottom: 5px;
+    text-align: left;
+}
+.inputBox input {
+    padding: 5px;
+}
+button[type="submit"] {
+    background-color: #2523BF;
+    border: none;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    height: min-content;
+    border-radius: 5px;
+}
+button[type="submit"]:hover {
+    cursor: pointer;
+    background-color: #2d2ab9;
+}
+.addFieldBox {
+    display: flex;
+    justify-content: end;
+    margin-top: 50px;
+}
+.addFieldBox button[type="button"] {
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+.addFieldBox button[type="button"] .addIcon {
+    position: absolute;
+    left: -25px;
+    top: 19;
+}
+.addFieldBox button[type="button"]:hover {
+    box-shadow: 0px 2px 2px black;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.addFieldBox button[type="button"]:hover .addIcon {
+    transition: all 0.5s;
+    left: 0;
+}
+.OrdersListCreate {
+    margin-top: 20px;
+    padding: 30px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+.OrdersListCreate .itemsDesc {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+.OrdersListCreate .itemsDesc span {
+    flex: 0 0 200px;
+    text-align: left;
+    margin-bottom: 5px;
+    white-space: nowrap;
+}
+.OrdersListCreate .itemsDesc span:first-child {
+    flex-basis: 0 0 224px;
+    flex-shrink: 0;
+}
+.OrdersListCreate .itemsDesc .emptyBox {
+    width: 30px;
+}
+
+.itemsDataList .positionNumber {
+    width: 30px;
+}
+.itemsDataList .itemData {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 20px;
+}
+.itemData .amount {
+    width: 200px;
+    padding: 5px;
+}
+
+.deleteItem {
+    width: 30px;
+    height: 30px;
+}
+.itemData .inputItem {
+    width: 200px;
+    height: 40px;
+    padding: 10px;
+    border-width: 1px;
+    border-radius: 5px;
+    border-style: solid;
+    box-sizing: border-box;
+    outline: none;
+}
+.itemData .inputItem:focus {
+    border: 2px solid blue;
+}
+
+.MuiInputBase-input {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.checkBorder {
+    border-color: green;
+}
+.errorBorder {
+    border-color: red;
+}
+
+.errorsBox {
+    width: auto;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+.errorsBox .errorLi {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(252, 104, 104);
+    margin: 10px 0px 10px 0px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.errorsBox .errorLi .errorMessage {
+    display: flex;
+    gap: 10px;
+}
+
+.provider {
+    width: 200px;
+}
+
+.generatedItemBox {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+}
+.generatedItemBox .inputStateIcon {
+    position: absolute;
+    right: 5px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+@media (max-width: 730px) {
+    .createOrderPage {
+        width: auto;
+    
+    }
+   .createOrderPageBox {
+    flex-direction: column;
+   }
+   .createOrderPageBox .orderInputsUp {
+    flex-direction: column;
+   }
+   .createOrderPageBox .orderInputsUp .provider {
+    width: 100%;
+   }
+   .createOrderPageBox .orderInputsDown {
+    flex-direction: column;
+   }
+   .createOrderPageBox .orderInputsDown .inputBox {
+    width: 100%;
+   }
+   .createOrderPageBox .orderInputsDown button[type="submit"] {
+    width: 100%;
+   }
+   .createOrderPageBox .orderInputsDown button[type="submit"] {
+    margin-top: 30px;
+   }
+   .OrdersListCreate {
+    position: relative;
+   }
+   .ordersListCreate-wrap {
+    overflow: scroll;
+   }
+   .addFieldBox {
+    margin-bottom: 30px;
+   }
+   .addFieldBox button[type="button"] {
+    position: absolute;
+    right: 20px;
+    bottom: 50px;
+   }
+   
+}
