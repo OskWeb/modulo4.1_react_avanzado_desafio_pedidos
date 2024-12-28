@@ -216,7 +216,7 @@ export const Header = ({ formState, handleProviderChange, handleDateChange, hand
                         </div>
 
                     </div>
-                    <div className="detail-inputBox detail-orderState">
+                    <div className="detail-inputBox detail-orderStateInfo">
                         <label htmlFor="">Estado</label>
                         <input type="text" value={orderState} />
                     </div>
@@ -244,7 +244,7 @@ export const Header = ({ formState, handleProviderChange, handleDateChange, hand
                             </button>
                         </div>
                     ) : (
-                        <Alert icon={<CheckIcon fontSize="inherit" />} severity="success">
+                        <Alert icon={<CheckIcon fontSize="inherit" />} severity="success" className="alertSuccess">
                             El pedido a sido enviado correctamente
                         </Alert>
                     )

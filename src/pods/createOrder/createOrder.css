@@ -41,7 +41,7 @@
     padding: 5px;
 }
 button[type="submit"] {
-    background-color: #2523BF;
+    background-color: #198448;
     border: none;
     color: white;
     padding: 10px 20px 10px 20px;
@@ -50,7 +50,7 @@ button[type="submit"] {
 }
 button[type="submit"]:hover {
     cursor: pointer;
-    background-color: #2d2ab9;
+    background-color: #239554;
 }
 .addFieldBox {
     display: flex;
@@ -92,19 +92,27 @@ button[type="submit"]:hover {
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
+    
 }
 .OrdersListCreate .itemsDesc span {
+   
     flex: 0 0 200px;
     text-align: left;
     margin-bottom: 5px;
     white-space: nowrap;
+    
+}
+.OrdersListCreate .itemsDesc .description {
+    margin-right: 23px;
 }
 .OrdersListCreate .itemsDesc span:first-child {
     flex-basis: 0 0 224px;
     flex-shrink: 0;
 }
 .OrdersListCreate .itemsDesc .emptyBox {
-    width: 30px;
+    margin-right: 30px;
+    margin-top: 30px;
+    display: block;
 }
 
 .itemsDataList .positionNumber {

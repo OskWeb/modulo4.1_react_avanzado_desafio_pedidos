@@ -109,12 +109,12 @@ export const ListOrder = ({
             <div className="detail-orderEntriesBox">
                 <div className="detail-order-wrap">
                     <div className="detail-itemsDesc">
-                        <div className="detail-emptyBox"></div>
-                        <span className="detail-orderState">Estado</span>
-                        <span className="detail-description">Descripción</span>
-                        <span className="detail-amount">Importe</span>
+                        {/* <div className="detail-emptyBox"></div>
+                        <span className="detail-orderState-label">Estado</span>
+                        <span className="detail-description-label">Descripción</span>
+                        <span className="detail-amount-label">Importe</span>
 
-                        <div className="detail-emptyBox"></div>
+                        <div className="detail-emptyBox"></div> */}
                     </div>
                     <div className="detail-orderEntries">
                         <div className="detail-itemsDataList">
@@ -132,6 +132,7 @@ export const ListOrder = ({
                                             />
                                         </div>
                                         <div className="detail-orderState">
+                                            <label className="label">Estado</label>
                                             <input
                                                 className="detail-inputItem"
                                                 value={item.itemState ? 'Valido' : 'Pendiente'}
@@ -141,6 +142,7 @@ export const ListOrder = ({
                                     </div>
 
                                     <div className="detail-descriptionBox">
+                                        <label className="label">Descripción</label>
                                         <input
                                             type="text"
                                             name={`formState.orderEntries.orderEntries[${index}].description`}
@@ -172,6 +174,7 @@ export const ListOrder = ({
                                         </div>
                                     </div>
                                     <div className="detail-amountBox">
+                                        <label className="label">Importe</label>
                                         <input
                                             name={`orderEntries.orderEntries[${index}].amount`}
                                             type="number"

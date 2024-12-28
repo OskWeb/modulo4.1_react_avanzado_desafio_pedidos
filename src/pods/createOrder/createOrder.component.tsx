@@ -92,7 +92,7 @@ export const CreateOrderComponent = () => {
         return values.totalAmount - currentValue;
     }
 
-    const handleSubmit = async (values) => {
+    const handleSubmit = async (values, { resetForm }) => {
         const data = {
             numberEntity: values.numberEntity,
             provider: values.provider,
@@ -107,6 +107,21 @@ export const CreateOrderComponent = () => {
         setOrders([...orders, data]);
         setCategory('all');
         handleStateChange(SlideTransition);
+
+        resetForm({
+            values: {
+                numberEntity: uuidv4(),
+                provider: '',
+                date: '',
+                totalAmount: 0,
+                orderState: 0,
+                orderEntries: [{
+                    idEntry: uuidv4(),
+                    description: "",
+                    amount: 0,
+                }]
+            }
+        });
     }
 
 
@@ -127,12 +142,12 @@ export const CreateOrderComponent = () => {
                     orderEntries: [{
                         idEntry: uuidv4(),
                         description: "",
-                        //itemState: 0,
                         amount: 0,
                     }]
                 }}
                     validationSchema={orderSchema}
                     onSubmit={handleSubmit}
+                    resetForm
                 >
                     {({ values, errors, touched, setFieldValue, isValid }) => (
                         <>

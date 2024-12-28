@@ -83,7 +83,7 @@
 .newOrderButton {
     width: 150px;
     padding: 10px;
-    background-color: #2523BF;
+    background-color: #198448;
     color: white;
     border: none;
     border-radius: 5px;
@@ -92,9 +92,10 @@
     justify-content: space-around;
    
 }
+
 .newOrderButton:hover {
     cursor: pointer;
-    background-color: #2e2cc1;
+    background-color: #239554;
 }
 .newOrderButton span {
     display: flex;
@@ -137,11 +138,11 @@
 }
 
 .orderListNavigation .navigationActive {
-    background-color: #2e2cc1;
+    background-color: #1E93FC;
     color: white;
 }
 .orderListNavigation .navigationDefault {
-    background-color: lightblue;
+    background-color: #A7A7A7;
 }
 
 .buttons-options-list-cell {

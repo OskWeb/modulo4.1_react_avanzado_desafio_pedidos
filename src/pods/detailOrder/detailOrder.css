@@ -123,11 +123,22 @@
     padding: 30px;
     margin-top: 30px;
 }
+.label {
+    width: 200px;
+    text-align: left;
+    display: inline-block;
+    margin-bottom: 5px;
+}
 
-.detail-orderStateLabel {
+
+.detail-orderState-label {
+    margin-right: 20px;
+} 
+
+/* .detail-orderStateLabel {
     display: block;
     width: 224px;
-}
+} */
 
 .detail-orderState input {
     width: 100px;
@@ -186,9 +197,12 @@
     display: flex;
     gap: 10px;
 }
-
+.detail-positionNumber {
+    margin-top: 20px;
+}
 .detail-checkbox {
     display: flex;
+   margin-top: 20px;
 }
 
 .detail-orderState .detail-inputItem {
@@ -220,7 +234,8 @@
 }
 
 .detail-OrdersListDetail .detail-itemsDesc .detail-emptyBox {
-    width: 30px;
+    margin-right: 30px;
+    margin-top: 30px;
 }
 
 .detail-itemsDataList .detail-itemData {
@@ -239,6 +254,7 @@
 .detail-deleteItem {
     width: 30px;
     height: 30px;
+    margin-top: 20px;
 }
 
 .detail-itemData .detail-inputItem {
@@ -318,7 +334,10 @@
     }
 
     .detail-itemsDesc {
-        margin-left: 55px;
+        margin-left: 25px; 
+    }
+    .detail-orderState-label {
+        margin-right: 22px;
     }
 
     .detail-itemsDesc span {}
@@ -359,6 +378,10 @@
         position: absolute;
         right: 20px;
         bottom: 50px;
+    }
+
+    .alertSuccess {
+        margin-top: 30px;
     }
 
 
