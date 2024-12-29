@@ -1,7 +1,6 @@
 import { Slide, SlideProps, Snackbar } from "@mui/material";
 import { TransitionProps } from "@mui/material/transitions";
 import React, { useEffect, useState } from "react";
-import { snackbarType } from "../pods/checkout_PersonalData/components/personalDataForm";
 
 export function SlideTransition(props: SlideProps) {
     return <Slide {...props} direction="up" />

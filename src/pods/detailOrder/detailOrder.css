@@ -38,6 +38,9 @@
 .detail-inputBoxDate label {
     margin-bottom: 5px;
     text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .detail-inputBoxDate input {
@@ -60,6 +63,9 @@
 .detail-inputBox label {
     margin-bottom: 5px;
     text-align: left;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
 }
 
 .detail-inputBox input {
@@ -90,9 +96,19 @@
 .detail-descriptionBox {
     position: relative;
 }
+.detail-descriptionBox label {
+    
+    font-size: 16px;
+    font-weight: bold;
+}
 
 .detail-amountBox {
     position: relative;
+}
+.detail-amountBox label {
+    font-size: 16px;
+    font-weight: bold;
+   
 }
 
 .detail-amountBox .detail-invalid-feedback {
@@ -139,7 +155,11 @@
     display: block;
     width: 224px;
 } */
-
+.detail-orderState label {
+    font-size: 16px;
+    font-weight: bold;
+    
+}
 .detail-orderState input {
     width: 100px;
 }

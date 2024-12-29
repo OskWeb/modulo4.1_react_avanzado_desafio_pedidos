@@ -242,12 +242,12 @@ export const CreateOrderComponent = () => {
                                 </div>
                                 <div className='OrdersListCreate'>
                                     <div className='ordersListCreate-wrap'>
-                                        <div className="itemsDesc">
+                                        {/* <div className="itemsDesc">
                                             <div className="emptyBox"></div>
                                             <span className="description">Descripción</span>
                                             <span className="amount">Importe</span>
                                             <div className="emptyBox"></div>
-                                        </div>
+                                        </div> */}
                                         <FieldArray name="orderEntries">
                                             {({ insert, remove, push }) => (
                                                 <div className="itemsDataList">
@@ -255,7 +255,7 @@ export const CreateOrderComponent = () => {
                                                         <div className="itemData" key={item.idEntry}>
                                                             <span className='positionNumber'>{index + 1}.</span>
                                                             <div>
-
+                                                                <label className='description'>Descripción</label>
                                                                 <Field
                                                                     name={`orderEntries[${index}].description`}
                                                                     type="text"
@@ -290,6 +290,7 @@ export const CreateOrderComponent = () => {
 
                                                             </div>
                                                             <div>
+                                                                <label className='amount'>Importe</label>
                                                                 <Field
                                                                     name={`orderEntries[${index}].amount`}
                                                                     type="number"

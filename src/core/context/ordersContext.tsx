@@ -19,6 +19,17 @@ const initialContext: OrdersContextEntity = {
     setOrders: () => { },
     category: '',
     setCategory: () => { },
+    orderSelected: {
+        numberEntity: '',
+        provider: '',
+        date: '',
+        totalAmount: 0,
+        orderState: '',
+        sent: false,
+        orderEntries: []
+    },
+    setOrderSelected: () => { }
+
 }
 
 export const OrdersContext = createContext<OrdersContextEntity>(initialContext);

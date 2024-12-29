@@ -36,6 +36,9 @@
 .inputBox label {
     margin-bottom: 5px;
     text-align: left;
+   text-transform: uppercase;
+   font-size: 12px;
+   font-weight: bold;
 }
 .inputBox input {
     padding: 5px;
@@ -102,9 +105,26 @@ button[type="submit"]:hover {
     white-space: nowrap;
     
 }
-.OrdersListCreate .itemsDesc .description {
-    margin-right: 23px;
+.itemData .description {
+    width: 200px;
+    display: inline-block;
+    text-align: left;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
 }
+.itemData .amount {
+    
+    width: 200px;
+    display: inline-block;
+    text-align: left;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+}
+
 .OrdersListCreate .itemsDesc span:first-child {
     flex-basis: 0 0 224px;
     flex-shrink: 0;
@@ -114,9 +134,10 @@ button[type="submit"]:hover {
     margin-top: 30px;
     display: block;
 }
-
 .itemsDataList .positionNumber {
     width: 30px;
+    margin-top: 25px;
+    
 }
 .itemsDataList .itemData {
     display: flex;
@@ -125,14 +146,12 @@ button[type="submit"]:hover {
     margin-bottom: 10px;
     gap: 20px;
 }
-.itemData .amount {
-    width: 200px;
-    padding: 5px;
-}
+
 
 .deleteItem {
     width: 30px;
     height: 30px;
+    margin-top: 25px;
 }
 .itemData .inputItem {
     width: 200px;
