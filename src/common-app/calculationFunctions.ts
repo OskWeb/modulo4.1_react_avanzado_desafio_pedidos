@@ -3,12 +3,12 @@ export const calculateTotal = (values, currentIndex, currentValue) => {
     if (index === currentIndex) {
       return total + (Number(currentValue) || 0);
     }
-    return total + (Number(entry.amount) || 0);
+    return total + (Number(entry.amount.value || entry.amount) || 0);
   }, 0);
 };
 
-export const substractTotal = (values, currentValue) => {
-  return values.totalAmount.value - Number(currentValue);
+export const substractTotal = (totalamount, currentValue) => {
+  return totalamount - Number(currentValue);
 };
 
 export const getDate = () => {

@@ -1,7 +1,7 @@
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { OrderDetail } from '../../../core/interfaces/Order';
 import { ListOrderTable } from './listOrderTable.component';
 import AddIcon from '@mui/icons-material/Add';
@@ -14,15 +14,12 @@ interface Data {
 
 export const OrderListNavigation = ({ orders }: Data) => {
 
-    // const [category, setCategory] = useState<string>('All');
     const navigate = useNavigate();
     const context = useContext(OrdersContext);
     const {
         category,
         setCategory
     } = context;
-    // const [ordersFiltered, setOrdersFiltered] = useState<OrderDetail[]>([]);
-    const [active, setActive] = useState({});
 
     return (
         <div>

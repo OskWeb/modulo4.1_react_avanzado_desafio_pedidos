@@ -1,5 +1,3 @@
-
-
 .contentBox {
     width: 100%;
     height: 100%;
@@ -12,16 +10,13 @@
 .MuiPaper-root {
     border: none;
 }
-
 .listOrdersTable {
     display: flex;
     justify-content: center;
-    
     width: 100%;
     height: 70vh;
     border-radius: 5px;
     padding: 10px;
-   
 }
 .listOrderTextInfo {
     display: flex;
@@ -41,12 +36,10 @@
 .item1 {
     width: 100px;
     text-align: left;
-    
 }
 .item2 {
     width: 200px;
     text-align: left;
-   
 }
 .item3 {
     margin-left: auto;
@@ -66,7 +59,6 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
-    
 }
 .emptyCreateOrderBox button {
     width: 120px;
@@ -74,7 +66,6 @@
     background-color: white;
     color: black;
     border: 1px solid black;
-    
 }
 .emptyCreateOrderBox button:hover {
     cursor: pointer;
@@ -90,9 +81,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-   
 }
-
 .newOrderButton:hover {
     cursor: pointer;
     background-color: #239554;
@@ -102,7 +91,6 @@
     align-items: center;
     gap: 5px;
 }
-
 .orderListContent {
     display: flex;
     flex-direction: column;
@@ -136,7 +124,6 @@
 .orderListNavigation button:nth-child(3) {
     border-radius: 0px 5px 5px 0px;
 }
-
 .orderListNavigation .navigationActive {
     background-color: #1E93FC;
     color: white;
@@ -144,7 +131,6 @@
 .orderListNavigation .navigationDefault {
     background-color: #A7A7A7;
 }
-
 .buttons-options-list-cell {
     display: flex;
 }
@@ -153,13 +139,11 @@
   display: flex;
   justify-content: end;
   gap: 20px;
-  
 }
 .buttons-options-list button {
     width: 80px;
     height: 40px;
 }
-
 .openButton {
     display: flex;
     align-items: center;
@@ -224,6 +208,4 @@
     .buttons-options-list .deleteButton span {
         display: none;
     }
-    
-   
 }

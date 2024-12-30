@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-export const Empty = ({ }) => {
+export const Empty = () => {
 
     const navigate = useNavigate();
 

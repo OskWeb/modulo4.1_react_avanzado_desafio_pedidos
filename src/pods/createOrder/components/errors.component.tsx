@@ -1,7 +1,6 @@
 import { ErrorMessage, FormikErrors, FormikTouched } from "formik"
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { ErrorHandleOrder, OrderDetail } from "../../../core/interfaces/Order";
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import ErrorIcon from '@mui/icons-material/Error';
 
 interface data {
@@ -13,48 +12,20 @@ interface data {
 
 export const Errors = ({ errors, touched, values, isValid }: data) => {
 
-    const [hasElementWithClass, setHasElementWithClass] = useState<boolean>(false);
     const ulRef = useRef<HTMLUListElement | null>(null);
-
-    useEffect(() => {
-
-        // if (!ulRef.current) return;
-
-        // console.log(errors);
-
-        // const observerCallback = (mutations: MutationRecord[]) => {
-        //     const hasElement = Array.from(ulRef.current!.getElementsByClassName('errorLi')).length > 0
-        //     setHasElementWithClass(hasElement);
-        // };
-
-        // const observer = new MutationObserver(observerCallback);
-
-        // observer.observe(ulRef.current, {
-        //     childList: true,
-        //     subtree: true
-        // });
-
-        // return () => {
-        //     observer.disconnect();
-        // }
-
-    }, [errors]);
 
     return (
         <>
             {
                 !isValid && errors ? (
                     <div className='errorsBox'>
-
                         <ul ref={ulRef}>
                             {
                                 <>
                                     <>
                                         {
                                             typeof errors.provider === 'string' && errors.provider.length > 0 && touched.provider && (
-                                                <li className='errorLi'
-                                                // ref={(el) => refs.current[0] = el}
-                                                >
+                                                <li className='errorLi'>
                                                     <span>Provider</span>
                                                     <div className="errorMessage">
                                                         <ErrorMessage
@@ -64,20 +35,14 @@ export const Errors = ({ errors, touched, values, isValid }: data) => {
                                                         />
                                                         <ErrorIcon />
                                                     </div>
-
                                                 </li>
                                             )
                                         }
                                     </>
                                     <>
                                         {
-
                                             typeof errors.date === 'string' && errors.date.length > 0 && touched.date && (
-                                                <li className='errorLi'
-
-                                                // ref={(el) => refs.current[1] = el}
-
-                                                >
+                                                <li className='errorLi'>
                                                     <span>Date</span>
                                                     <div className="errorMessage">
                                                         <ErrorMessage
@@ -114,7 +79,6 @@ export const Errors = ({ errors, touched, values, isValid }: data) => {
                                                                     />
                                                                     <ErrorIcon />
                                                                 </div>
-
                                                             </li>
                                                         ) : null
                                                 }
@@ -138,7 +102,6 @@ export const Errors = ({ errors, touched, values, isValid }: data) => {
                                                                     />
                                                                     <ErrorIcon />
                                                                 </div>
-
                                                             </li>
                                                         ) : null
                                                 }

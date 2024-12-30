@@ -1,4 +1,4 @@
-import { Entries, OrderDetailReducer, UpdatePayloadField } from "../../../core/interfaces/Order"
+import { Entries, OrderDetailEntriesReducer, OrderDetailReducer, UpdatePayloadField } from "../../../core/interfaces/Order"
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import { calculateTotal, substractTotal } from "../../../common-app/calculationFunctions";
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
@@ -13,7 +13,7 @@ interface data {
     handleUpdateEntryField: (payload: UpdatePayloadField) => void,
     handleTotalAmountChange: (payload: number) => void,
     handleDeleteEntry: (payload: number) => void,
-    handleUpdateEntriesState: (payload: Entries[]) => void,
+    handleUpdateEntriesState: (payload: OrderDetailEntriesReducer[]) => void,
     handleUpdateOrderState: () => void,
     formState: OrderDetailReducer
 }
@@ -40,8 +40,6 @@ export const ListOrder = ({
         setCheked(updatedCheckedState);
     }
 
-    //const [entriesList, setEntriesList] = useState<OrderEntries>(orderEntries);
-    // actualizar la lista de orders y el orderSelected
     const [selected, setSelected] = useState('');
 
     const handleToggleChange = (
@@ -49,19 +47,6 @@ export const ListOrder = ({
         newSelected: string,
     ) => {
         setSelected(newSelected);
-    }
-
-    const calculateTotal = (values, currentIndex, currentValue) => {
-        return values.orderEntries.reduce((total, entry, index) => {
-            if (index === currentIndex) {
-                return total + (Number(currentValue) || 0);
-            }
-            return total + (Number(entry.amount.value) || 0);
-        }, 0);
-    }
-
-    const substractTotal = (totalAmount, currentValue) => {
-        return totalAmount - currentValue;
     }
 
     const updateEntriesState = () => {
@@ -108,14 +93,6 @@ export const ListOrder = ({
             </ToggleButtonGroup>
             <div className="detail-orderEntriesBox">
                 <div className="detail-order-wrap">
-                    <div className="detail-itemsDesc">
-                        {/* <div className="detail-emptyBox"></div>
-                        <span className="detail-orderState-label">Estado</span>
-                        <span className="detail-description-label">Descripción</span>
-                        <span className="detail-amount-label">Importe</span>
-
-                        <div className="detail-emptyBox"></div> */}
-                    </div>
                     <div className="detail-orderEntries">
                         <div className="detail-itemsDataList">
                             {formState.orderEntries.orderEntries.map((item, index) => (
@@ -198,10 +175,7 @@ export const ListOrder = ({
                                                 console.log("total: " + formState.totalAmount.value);
                                                 handleUpdateEntryField({ position: index, field: 'amount', value: value });
                                                 handleTotalAmountChange(totalAmount);
-
-
                                             }}
-
                                         />
                                         <div className="detail-invalid-feedback">
                                             {
@@ -243,14 +217,10 @@ export const ListOrder = ({
                                     <AddIcon className='detail-addIcon' /> Añadir entrada
                                 </button>
                             </div>
-
                         </div>
-
                     </div >
                 </div>
-
             </div>
-
         </div>
     )
 }

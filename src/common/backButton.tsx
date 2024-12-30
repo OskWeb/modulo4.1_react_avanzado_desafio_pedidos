@@ -5,15 +5,9 @@ export const BackButton = () => {
     const navigate = useNavigate();
 
     return (
-        <button onClick={() => navigate(-1)} style={{
-            width: '120px',
-            height: '40px',
-            display: 'flex',
-            padding: '10px',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginBottom: '20px'
-        }}>
+        <button onClick={() => navigate(-1)}
+            className='backButton'
+        >
             <ArrowBackIcon />
             Volver
         </button>

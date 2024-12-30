@@ -14,10 +14,9 @@ interface data {
     handleProviderChange: (value: string) => void
     handleDateChange: (value: string) => void
     handleOrderSent: () => void
-    addClassNameForValidity: (propertyName: string) => string
 }
 
-export const Header = ({ formState, handleProviderChange, handleDateChange, handleOrderSent, addClassNameForValidity }: data) => {
+export const Header = ({ formState, handleProviderChange, handleDateChange, handleOrderSent }: data) => {
 
     const [price, setPrice] = useState('');
     const [orderState, setOrderState] = useState('');
@@ -84,7 +83,6 @@ export const Header = ({ formState, handleProviderChange, handleDateChange, hand
                             description: item.description.value,
                             amount: item.amount.value
                         }))
-
                     }
                     : order
             )
@@ -95,7 +93,6 @@ export const Header = ({ formState, handleProviderChange, handleDateChange, hand
         } else {
             setFormValid(false);
         }
-
         handleStateChangeUpdate(SlideTransition);
     }
 

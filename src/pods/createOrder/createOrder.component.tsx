@@ -16,6 +16,7 @@ import { BackButton } from '../../common/backButton';
 import { SlideTransition, TransitionsSnackbar } from '../../common/transitionSnackbar';
 import { euro } from '../../core/utils/formatters.util';
 import { TransitionProps } from '@mui/material/transitions';
+import { calculateTotal, substractTotal } from '../../common-app/calculationFunctions';
 
 const getDate = () => {
     const today = new Date();
@@ -79,18 +80,18 @@ export const CreateOrderComponent = () => {
         });
     }
 
-    const calculateTotal = (values, currentIndex, currentValue) => {
-        return values.orderEntries.reduce((total, entry, index) => {
-            if (index === currentIndex) {
-                return total + (Number(currentValue) || 0);
-            }
-            return total + (Number(entry.amount) || 0);
-        }, 0);
-    }
+    // const calculateTotal = (values, currentIndex, currentValue) => {
+    //     return values.orderEntries.reduce((total, entry, index) => {
+    //         if (index === currentIndex) {
+    //             return total + (Number(currentValue) || 0);
+    //         }
+    //         return total + (Number(entry.amount) || 0);
+    //     }, 0);
+    // }
 
-    const substractTotal = (values, currentValue) => {
-        return values.totalAmount - currentValue;
-    }
+    // const substractTotal = (values, currentValue) => {
+    //     return values.totalAmount - currentValue;
+    // }
 
     const handleSubmit = async (values, { resetForm }) => {
         const data = {
@@ -123,8 +124,6 @@ export const CreateOrderComponent = () => {
             }
         });
     }
-
-
 
     return (
         <div className="createOrderPage">
@@ -338,7 +337,7 @@ export const CreateOrderComponent = () => {
                                                             <button className="deleteItem"
                                                                 onClick={() => {
                                                                     console.log(values.orderEntries[index].amount);
-                                                                    const totalAmount = substractTotal(values, values.orderEntries[index].amount);
+                                                                    const totalAmount = substractTotal(values.totalAmount, values.orderEntries[index].amount);
                                                                     console.log(euro.format(totalAmount));
                                                                     setFieldValue("totalAmount", totalAmount);
                                                                     remove(index)

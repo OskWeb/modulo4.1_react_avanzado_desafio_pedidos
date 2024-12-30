@@ -1,4 +1,3 @@
-import { useParams } from "react-router-dom"
 import { OrdersContext } from "../../core/context/ordersContext";
 import { useContext, useReducer } from "react";
 import { Header } from "./components/header.component";
@@ -8,12 +7,7 @@ import './detailOrder.css'
 import { BackButton } from "../../common/backButton";
 import { Errors } from "./components/errors.component";
 
-const handleSubmit = (values) => {
-    //const { values } = useFormikContext();
-}
-
 export const DetailOrderComponent = () => {
-    const { orderId } = useParams();
     const context = useContext(OrdersContext);
     const { orderSelected } = context;
 
@@ -113,20 +107,6 @@ export const DetailOrderComponent = () => {
         })
     }
 
-    const addClassNameForValidity = (propertyName) => {
-        if (formState[propertyName].isTouched && formState[propertyName].isValid) {
-            return "is-invalid";
-        } else {
-            if (
-                formState[propertyName].isTouched &&
-                formState[propertyName].isValid
-            ) {
-                return "is-valid";
-            }
-            return "";
-        }
-    }
-
     return (
         <div className="detail-detailOrderPage">
             <BackButton />
@@ -139,7 +119,6 @@ export const DetailOrderComponent = () => {
                     handleProviderChange={handleProviderChange}
                     handleDateChange={handleDateChange}
                     handleOrderSent={handleOrderSent}
-                    addClassNameForValidity={addClassNameForValidity}
                     formState={formState}
                 />
                 <ListOrder

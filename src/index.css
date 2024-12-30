@@ -60,3 +60,21 @@
   font-weight: bold;
   display: inline-block;
 }
+
+.backButton {
+  width: 120px;
+  height: 40px;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: transparent;
+  border: 2px solid #198448;
+  color: #198448;
+  border-radius: 5px;
+  transition: 0.3s all;
+}
+.backButton:hover {
+  cursor: pointer;
+}
