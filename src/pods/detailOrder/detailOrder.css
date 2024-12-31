@@ -43,7 +43,7 @@
 .detail-inputBoxDate .detail-invalid-feedback {
     position: absolute;
     right: 35px;
-    top: 26px;
+    top: 25px;
 }
 .detail-inputBox {
     display: flex;
@@ -95,12 +95,12 @@
 }
 .detail-amountBox .detail-invalid-feedback {
     position: absolute;
-    top: 30px;
+    top: 8px;
     right: 10px;
 }
 .detail-descriptionBox .detail-invalid-feedback {
     position: absolute;
-    top: 30px;
+    top: 8px;
     right: 10px;
 }
 .detail-totalAmount {
@@ -117,20 +117,35 @@
     padding: 30px;
     margin-top: 30px;
 }
-.label {
-    width: 200px;
+.labelBox {
+    display: flex;
+    align-items: center;
+}
+.labelBox div .label {
+    gap: 20px;
     text-align: left;
-    display: inline-block;
+    display: block;
     margin-bottom: 5px;
+    margin-right: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 200px;
+    height: 20px;
+    box-sizing: border-box;
+    outline: none;
+}
+.labelBox div:nth-child(1) {
+    margin-left: 60px;
 }
 .detail-orderState-label {
     margin-right: 20px;
 } 
-.detail-orderState label {
+/* .detail-orderState label {
     font-size: 12px;
     font-weight: bold;
     text-transform: uppercase;
-}
+} */
 .detail-orderState input {
     width: 100px;
 }
@@ -179,12 +194,10 @@
     display: flex;
     gap: 10px;
 }
-.detail-positionNumber {
-    margin-top: 20px;
-}
+
 .detail-checkbox {
     display: flex;
-   margin-top: 20px;
+   
 }
 .detail-orderState .detail-inputItem {
     width: 176px;
@@ -282,6 +295,12 @@
 .errors .is-invalid .errorMessage {
     display: flex;
     gap: 10px;
+}
+.buttonsGroup_info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
 }
 @media (max-width: 930px) {
     .detail-detailOrderPage {

@@ -14,17 +14,11 @@ import AddIcon from '@mui/icons-material/Add';
 import EuroIcon from '@mui/icons-material/Euro';
 import { BackButton } from '../../common/backButton';
 import { SlideTransition, TransitionsSnackbar } from '../../common/transitionSnackbar';
-import { euro } from '../../core/utils/formatters.util';
+import { euro, getDateValidation } from '../../core/utils/formatters.util';
 import { TransitionProps } from '@mui/material/transitions';
 import { calculateTotal, substractTotal } from '../../common-app/calculationFunctions';
 
-const getDate = () => {
-    const today = new Date();
-    const month = today.getMonth() + 1;
-    const year = today.getFullYear();
-    const date = today.getDate();
-    return `${year}-${month}-${date}`;
-}
+
 
 const orderSchema = Yup.object().shape({
     provider: Yup.string()
@@ -42,7 +36,7 @@ const orderSchema = Yup.object().shape({
         })
         .typeError("please enter a valid date")
         .required()
-        .min(getDate(), 'La fecha tiene que ser mayor a la actual'),
+        .min(getDateValidation(), 'La fecha tiene que ser mayor a la actual'),
     orderEntries: Yup.array()
         .of(
             Yup.object({
@@ -79,19 +73,6 @@ export const CreateOrderComponent = () => {
             transition,
         });
     }
-
-    // const calculateTotal = (values, currentIndex, currentValue) => {
-    //     return values.orderEntries.reduce((total, entry, index) => {
-    //         if (index === currentIndex) {
-    //             return total + (Number(currentValue) || 0);
-    //         }
-    //         return total + (Number(entry.amount) || 0);
-    //     }, 0);
-    // }
-
-    // const substractTotal = (values, currentValue) => {
-    //     return values.totalAmount - currentValue;
-    // }
 
     const handleSubmit = async (values, { resetForm }) => {
         const data = {
@@ -233,7 +214,6 @@ export const CreateOrderComponent = () => {
                                                         </InputAdornment>
                                                     )
                                                 }}
-
                                             />
                                         </div>
                                         <button type="submit">Crear Pedido</button>
@@ -241,12 +221,14 @@ export const CreateOrderComponent = () => {
                                 </div>
                                 <div className='OrdersListCreate'>
                                     <div className='ordersListCreate-wrap'>
-                                        {/* <div className="itemsDesc">
-                                            <div className="emptyBox"></div>
-                                            <span className="description">Descripción</span>
-                                            <span className="amount">Importe</span>
-                                            <div className="emptyBox"></div>
-                                        </div> */}
+                                        <div className="labelBox-create">
+                                            <div>
+                                                <label className="label">Descripción</label>
+                                            </div>
+                                            <div>
+                                                <label className="label">Importe</label>
+                                            </div>
+                                        </div>
                                         <FieldArray name="orderEntries">
                                             {({ insert, remove, push }) => (
                                                 <div className="itemsDataList">
@@ -254,7 +236,6 @@ export const CreateOrderComponent = () => {
                                                         <div className="itemData" key={item.idEntry}>
                                                             <span className='positionNumber'>{index + 1}.</span>
                                                             <div>
-                                                                <label className='description'>Descripción</label>
                                                                 <Field
                                                                     name={`orderEntries[${index}].description`}
                                                                     type="text"
@@ -281,20 +262,14 @@ export const CreateOrderComponent = () => {
                                                                             {!meta.error && meta.touched && (
                                                                                 <CheckCircleIcon style={{ color: 'green' }} className='inputStateIcon' />
                                                                             )}
-
                                                                         </div>
                                                                     )}
-
                                                                 </Field>
-
                                                             </div>
                                                             <div>
-                                                                <label className='amount'>Importe</label>
                                                                 <Field
                                                                     name={`orderEntries[${index}].amount`}
                                                                     type="number"
-
-
                                                                 >
                                                                     {({
                                                                         field,
@@ -336,9 +311,7 @@ export const CreateOrderComponent = () => {
                                                             </div>
                                                             <button className="deleteItem"
                                                                 onClick={() => {
-                                                                    console.log(values.orderEntries[index].amount);
                                                                     const totalAmount = substractTotal(values.totalAmount, values.orderEntries[index].amount);
-                                                                    console.log(euro.format(totalAmount));
                                                                     setFieldValue("totalAmount", totalAmount);
                                                                     remove(index)
                                                                 }}

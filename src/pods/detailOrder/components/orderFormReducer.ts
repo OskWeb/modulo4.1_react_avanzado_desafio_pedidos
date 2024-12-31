@@ -68,7 +68,6 @@ export const orderFormReducer = (state, action) => {
       );
       const orderStateUpdated =
         (validated.length * 100) / state.orderEntries.orderEntries.length;
-      console.log(orderStateUpdated);
 
       return {
         ...state,
@@ -126,8 +125,6 @@ export const orderFormReducer = (state, action) => {
           ),
         },
       };
-
-      console.log(updated);
 
       return updated;
     }

@@ -86,7 +86,7 @@ export const Header = ({ formState, handleProviderChange, handleDateChange, hand
                     }
                     : order
             )
-            console.log(ordersUpdated);
+
             setOrders(ordersUpdated);
             setCategory('all');
             setFormValid(true);
@@ -103,13 +103,7 @@ export const Header = ({ formState, handleProviderChange, handleDateChange, hand
                 ?
                 {
                     ...order,
-                    sent: true,
-                    orderEntries: formState.orderEntries.orderEntries.map((item) => ({
-                        idEntry: item.idEntry,
-                        itemState: true,
-                        description: item.description.value,
-                        amount: item.amount.value
-                    }))
+                    sent: true
                 }
                 : order
         )
@@ -128,7 +122,6 @@ export const Header = ({ formState, handleProviderChange, handleDateChange, hand
     const inputRef = useRef<HTMLInputElement | null>(null);
 
     return (
-
         <div className="detail-headerBox">
             <div className="detail-orderInputsUp">
                 <div className="detail-inputBox">
@@ -158,7 +151,6 @@ export const Header = ({ formState, handleProviderChange, handleDateChange, hand
                         }}
                         disabled={false}
                     />
-
                     <div className="detail-invalid-feedback">
                         {
                             !formState.provider.isValid && formState.provider.isTouched && (
@@ -183,7 +175,6 @@ export const Header = ({ formState, handleProviderChange, handleDateChange, hand
                             !formState.date.isValid && formState.date.isTouched && 'detail-borderRed'
                             }`}
                         onChange={(e) => handleDateChange(e.target.value)}
-
                     />
                     <div className="detail-invalid-feedback">
                         {
@@ -211,34 +202,37 @@ export const Header = ({ formState, handleProviderChange, handleDateChange, hand
                                 readOnly={true}
                             />
                         </div>
-
                     </div>
                     <div className="detail-inputBox detail-orderStateInfo">
                         <label htmlFor="">Estado</label>
                         <input type="text" value={orderState} />
                     </div>
                 </div>
-
                 {
                     !formState.sent && !orderSelected.sent ? (
-                        <div className="detail-buttonsGroup">
-                            <button className="detail-updateOrderButton" onClick={(e) => {
-                                e.preventDefault();
-                                handleSubmit();
-                            }}
-
-                            >Guardar</button>
-                            <button
-                                className={`sendButton ${formState.orderState.value == '100' ? 'sendActive' : 'sendDisabled'}`}
-                                disabled={formState.orderState.value == '100' ? false : true}
-                                onClick={(e) => {
+                        <div className="buttonsGroup_info">
+                            <div className="detail-buttonsGroup">
+                                <button className="detail-updateOrderButton" onClick={(e) => {
                                     e.preventDefault();
-                                    handleSend();
-                                    handleOrderSent();
+                                    handleSubmit();
                                 }}
-                            >
-                                Enviar
-                            </button>
+
+                                >Guardar</button>
+                                <button
+                                    className={`sendButton ${formState.orderState.value == '100' ? 'sendActive' : 'sendDisabled'}`}
+                                    disabled={formState.orderState.value == '100' ? false : true}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        handleSend();
+                                        handleOrderSent();
+                                    }}
+                                >
+                                    Enviar
+                                </button>
+                            </div>
+                            <div>
+                                <Alert severity="info">Guarda los cambios antes de enviar</Alert>
+                            </div>
                         </div>
                     ) : (
                         <Alert icon={<CheckIcon fontSize="inherit" />} severity="success" className="alertSuccess">

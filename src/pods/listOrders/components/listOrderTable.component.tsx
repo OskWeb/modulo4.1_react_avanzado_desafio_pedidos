@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom"
 import { useContext } from "react"
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import { getDateShow } from "../../../core/utils/formatters.util"
 
 export const ListOrderTable = ({ orders }) => {
 
@@ -58,7 +59,7 @@ export const ListOrderTable = ({ orders }) => {
                                             </TableCell>
                                             <TableCell align="right">
                                                 <span>
-                                                    {order.date}
+                                                    {getDateShow(order.date)}
                                                 </span>
                                             </TableCell>
                                             <TableCell align="right" className="buttons-options-list-cell">

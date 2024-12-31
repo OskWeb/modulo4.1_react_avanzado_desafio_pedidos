@@ -59,12 +59,10 @@ export const ListOrder = ({
         })
 
         handleUpdateEntriesState(entriesUpdated);
-        console.log(entriesUpdated);
     }
 
     useEffect(() => {
         updateEntriesState();
-        console.log("actualizando...");
     }, [selected])
 
 
@@ -95,6 +93,17 @@ export const ListOrder = ({
                 <div className="detail-order-wrap">
                     <div className="detail-orderEntries">
                         <div className="detail-itemsDataList">
+                            <div className="labelBox">
+                                <div>
+                                    <label className="label">Estado</label>
+                                </div>
+                                <div>
+                                    <label className="label">Descripción</label>
+                                </div>
+                                <div>
+                                    <label className="label">Importe</label>
+                                </div>
+                            </div>
                             {formState.orderEntries.orderEntries.map((item, index) => (
                                 <div className="detail-itemData" key={item.idEntry}>
                                     <span className='detail-positionNumber'>{index + 1}.</span>
@@ -109,7 +118,6 @@ export const ListOrder = ({
                                             />
                                         </div>
                                         <div className="detail-orderState">
-                                            <label className="label">Estado</label>
                                             <input
                                                 className="detail-inputItem"
                                                 value={item.itemState ? 'Valido' : 'Pendiente'}
@@ -119,7 +127,6 @@ export const ListOrder = ({
                                     </div>
 
                                     <div className="detail-descriptionBox">
-                                        <label className="label">Descripción</label>
                                         <input
                                             type="text"
                                             name={`formState.orderEntries.orderEntries[${index}].description`}
@@ -151,7 +158,6 @@ export const ListOrder = ({
                                         </div>
                                     </div>
                                     <div className="detail-amountBox">
-                                        <label className="label">Importe</label>
                                         <input
                                             name={`orderEntries.orderEntries[${index}].amount`}
                                             type="number"
@@ -171,8 +177,6 @@ export const ListOrder = ({
                                                     index,
                                                     value
                                                 );
-                                                console.log(formState.orderEntries);
-                                                console.log("total: " + formState.totalAmount.value);
                                                 handleUpdateEntryField({ position: index, field: 'amount', value: value });
                                                 handleTotalAmountChange(totalAmount);
                                             }}
@@ -211,7 +215,6 @@ export const ListOrder = ({
                                         const newEntry = { idEntry: uuidv4(), description: "", itemState: false, amount: 0 };
                                         handleAddEntry(newEntry);
                                         setCheked([...checked, false]);
-                                        console.log(newEntry);
                                     }
                                     }>
                                     <AddIcon className='detail-addIcon' /> Añadir entrada

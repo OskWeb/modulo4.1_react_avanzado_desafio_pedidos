@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 .createOrderPage {
     width: min-content;
     margin-left: 10px;
@@ -95,15 +94,12 @@ button[type="submit"]:hover {
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
-    
 }
 .OrdersListCreate .itemsDesc span {
-   
     flex: 0 0 200px;
     text-align: left;
     margin-bottom: 5px;
     white-space: nowrap;
-    
 }
 .itemData .description {
     width: 200px;
@@ -115,7 +111,6 @@ button[type="submit"]:hover {
     font-weight: bold;
 }
 .itemData .amount {
-    
     width: 200px;
     display: inline-block;
     text-align: left;
@@ -124,7 +119,6 @@ button[type="submit"]:hover {
     font-size: 12px;
     font-weight: bold;
 }
-
 .OrdersListCreate .itemsDesc span:first-child {
     flex-basis: 0 0 224px;
     flex-shrink: 0;
@@ -136,8 +130,6 @@ button[type="submit"]:hover {
 }
 .itemsDataList .positionNumber {
     width: 30px;
-    margin-top: 25px;
-    
 }
 .itemsDataList .itemData {
     display: flex;
@@ -146,12 +138,12 @@ button[type="submit"]:hover {
     margin-bottom: 10px;
     gap: 20px;
 }
-
-
 .deleteItem {
     width: 30px;
     height: 30px;
-    margin-top: 25px;
+}
+.itemsDataList .itemData div:first-child {
+    margin-right: 60px;
 }
 .itemData .inputItem {
     width: 200px;
@@ -166,25 +158,21 @@ button[type="submit"]:hover {
 .itemData .inputItem:focus {
     border: 2px solid blue;
 }
-
 .MuiInputBase-input {
     border: 1px solid black;
     border-radius: 5px;
 }
-
 .checkBorder {
     border-color: green;
 }
 .errorBorder {
     border-color: red;
 }
-
 .errorsBox {
     width: auto;
     border-radius: 10px;
     margin-top: 50px;
 }
-
 .errorsBox .errorLi {
     display: flex;
     justify-content: space-between;
@@ -193,16 +181,13 @@ button[type="submit"]:hover {
     padding: 10px;
     border-radius: 5px;
 }
-
 .errorsBox .errorLi .errorMessage {
     display: flex;
     gap: 10px;
 }
-
 .provider {
     width: 200px;
 }
-
 .generatedItemBox {
     display: flex;
     align-items: center;
@@ -212,6 +197,27 @@ button[type="submit"]:hover {
 .generatedItemBox .inputStateIcon {
     position: absolute;
     right: 5px;
+}
+.labelBox-create {
+    display: flex;
+    align-items: center;
+}
+.labelBox-create div .label {
+    gap: 20px;
+    text-align: left;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 200px;
+    height: 20px;
+    box-sizing: border-box;
+    outline: none;
+}
+.labelBox-create div:nth-child(1) {
+    margin-left: 50px;
+    margin-right: 80px;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -227,44 +233,46 @@ input[type=number] {
 }
 
 @media (max-width: 730px) {
+    .labelBox-create div:nth-child(1) {
+        margin-left: 32px;
+        margin-right: 80px;
+    }
     .createOrderPage {
         width: auto;
-    
     }
-   .createOrderPageBox {
-    flex-direction: column;
-   }
-   .createOrderPageBox .orderInputsUp {
-    flex-direction: column;
-   }
-   .createOrderPageBox .orderInputsUp .provider {
-    width: 100%;
-   }
-   .createOrderPageBox .orderInputsDown {
-    flex-direction: column;
-   }
-   .createOrderPageBox .orderInputsDown .inputBox {
-    width: 100%;
-   }
-   .createOrderPageBox .orderInputsDown button[type="submit"] {
-    width: 100%;
-   }
-   .createOrderPageBox .orderInputsDown button[type="submit"] {
-    margin-top: 30px;
-   }
-   .OrdersListCreate {
-    position: relative;
-   }
-   .ordersListCreate-wrap {
-    overflow: scroll;
-   }
-   .addFieldBox {
-    margin-bottom: 30px;
-   }
-   .addFieldBox button[type="button"] {
-    position: absolute;
-    right: 20px;
-    bottom: 50px;
-   }
-   
+    .createOrderPageBox {
+        flex-direction: column;
+    }
+    .createOrderPageBox .orderInputsUp {
+        flex-direction: column;
+    }
+    .createOrderPageBox .orderInputsUp .provider {
+        width: 100%;
+    }
+    .createOrderPageBox .orderInputsDown {
+        flex-direction: column;
+    }
+    .createOrderPageBox .orderInputsDown .inputBox {
+        width: 100%;
+    }
+    .createOrderPageBox .orderInputsDown button[type="submit"] {
+        width: 100%;
+    }
+    .createOrderPageBox .orderInputsDown button[type="submit"] {
+        margin-top: 30px;
+    }
+    .OrdersListCreate {
+        position: relative;
+    }
+    .ordersListCreate-wrap {
+        overflow: scroll;
+    }
+    .addFieldBox {
+        margin-bottom: 30px;
+    }
+    .addFieldBox button[type="button"] {
+        position: absolute;
+        right: 20px;
+        bottom: 50px;
+    }
 }
